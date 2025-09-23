@@ -1,0 +1,24 @@
+{
+  "agent": {
+      "metrics_collection_interval": 60,
+      "region": "eu-west-2",
+      "logfile": "c:\\ProgramData\\Amazon\\CloudWatchAgent\\Logs\\amazon-cloudwatch-agent.log",
+      "debug": false
+  },
+  "metrics": {
+    "namespace": "Windows-Metrics",
+    "metrics_collected": {
+      "Memory": {
+        "measurement": [
+          "Available Bytes"
+        ]
+      }
+    },
+    "append_dimensions": {
+      "ImageId": "${aws:ImageId}",
+      "InstanceId": "${aws:InstanceId}",
+      "InstanceType": "${aws:InstanceType}"
+    },
+    "aggregation_dimensions" : [["InstanceId"],[]]
+  }
+}
